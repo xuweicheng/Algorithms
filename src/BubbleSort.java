@@ -24,6 +24,29 @@
 public class BubbleSort {
     public static void main(String[] args) {
         int[] array = { 5, 1, 4, 2, 8};
+
+//        sortWithWhile(array);
+        sortWithFor(array);
+
+        for(int i=0; i < array.length; i++){
+            System.out.println(array[i]);
+        }
+    }
+
+    static void sortWithFor(int[] array) {
+        for (int i = 0; i < array.length; i++){
+            for(int j = i; j < array.length - 1 - i; j++){
+                int temp;
+                if(array[j] > array[j+1]) {
+                    temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
+    }
+
+    static void sortWithWhile(int[] array) {
         boolean needPass;
         int temp;
 
@@ -39,8 +62,5 @@ public class BubbleSort {
             }
         }while(needPass);
 
-        for(int i=0; i < array.length; i++){
-            System.out.println(array[i]);
-        }
     }
 }
