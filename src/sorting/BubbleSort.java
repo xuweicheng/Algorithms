@@ -1,3 +1,5 @@
+package sorting;
+
 //Bubble Sort
 //        1.6
 //        Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
