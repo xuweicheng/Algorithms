@@ -25,10 +25,11 @@ package sorting;
 //        ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
 public class BubbleSort {
     public static void main(String[] args) {
-        int[] array = { 5, 1, 4, 2, 8};
+        int[] array = { 5, 1, 8, 4, 2};
 
 //        sortWithWhile(array);
-        sortWithFor(array);
+//        sortWithFor(array);
+        sortRecursive(array, array.length);
 
         for(int i=0; i < array.length; i++){
             System.out.println(array[i]);
@@ -64,5 +65,21 @@ public class BubbleSort {
             }
         }while(needPass);
 
+    }
+
+    static void sortRecursive(int[] array, int size){
+        if(size == 1)
+            return;
+
+        for(int i = 0; i < size-1; i ++){
+            if(array[i] > array[i+1]){
+                int temp = array[i];
+                array[i] = array[i+1];
+                array[i+1] = temp;
+            }
+        }
+
+        size--;
+        sortRecursive(array, size);
     }
 }
